@@ -21,8 +21,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var storyDate: UILabel!
     @IBOutlet weak var storyPortion: UILabel!
     
+    @IBOutlet weak var offlineText: UILabel!
+    @IBOutlet weak var offlineImage: UIImageView!
+    
+    @IBOutlet weak var loadingStory: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        
+        calibrateTime()
+        updateTime()
+
+        loadNews()
+        
+        refreshUpdateTimer()
+    }
+    
+    var refreshTimer: Timer?
+    var storyRefreshMins: Double = 60
+    
+    func setupViews() {
         
         let gradient = CAGradientLayer()
         gradient.frame = backgroundImage.frame
@@ -33,22 +53,43 @@ class ViewController: UIViewController {
         
         bloombergButton.layer.cornerRadius = bloombergButton.frame.height / 2
         bloombergButton.addTarget(self, action: #selector(watchBloomberg(_:)), for: .touchUpInside)
-        
-        calibrateTime()
-        updateTime()
-
-        loadNews()
+        bloombergButton.layer.shadowColor = bloombergButton.backgroundColor?.cgColor
+        bloombergButton.layer.shadowOffset = CGSize(width: 1, height: 3)
+        bloombergButton.layer.shadowOpacity = 0.5
+        bloombergButton.layer.shadowRadius = 5
+        bloombergButton.layer.masksToBounds = false
         
         storyImage.layer.cornerRadius = 10
         storyImage.layer.masksToBounds = true
+        
     }
     
-    func loadNews() {
+    func refreshUpdateTimer() {
+        refreshTimer?.invalidate()
+        refreshTimer = Timer.scheduledTimer(timeInterval: 60.0 * storyRefreshMins, target: self, selector: #selector(loadNews), userInfo: nil, repeats: true)
+    }
+    
+    @objc func loadNews() {
+        self.storyTitle.text?.removeAll()
+        self.storyDate.text?.removeAll()
+        self.storyPortion.text?.removeAll()
+        self.storyImage.image = nil
+        self.offlineImage.isHidden = true
+        self.offlineText.isHidden = true
+        
+        loadingStory.startAnimating()
         Model.shared.getMostRecentNews { story, error in
             DispatchQueue.main.async {
+                self.loadingStory.stopAnimating()
                 guard let story = story, !error else {
+                    self.offlineImage.isHidden = false
+                    self.offlineText.isHidden = false
+                    self.storyRefreshMins = 1
+                    self.refreshUpdateTimer()
                     return
                 }
+                self.storyRefreshMins = 60
+                self.refreshUpdateTimer()
                 
                 self.storyTitle.text = story.title
                 self.storyDate.text = story.date

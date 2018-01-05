@@ -29,7 +29,7 @@ class Request {
             
             callback(nil, nil)
             
-            }.resume()
+        }.resume()
     }
     
     func dataTask(_ urlString: String, callback: @escaping (Data?, Error?) -> ()) {
@@ -37,7 +37,7 @@ class Request {
         request.httpMethod = "GET"
         URLSession.shared.dataTask(with: request) { data, response, error in
             callback(data, error)
-            }.resume()
+        }.resume()
     }
 }
 
@@ -82,23 +82,10 @@ extension String{
     }
 }
 
-@IBDesignable
-extension UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-        }
-    }
-}
-
 class Model {
     static var shared = Model()
     
     func getStory(id: Int, callback: @escaping (Story?, Bool) -> ()) {
-        print("Story with id: \(String(describing: id))")
         Request.shared.dataTask("https://www.fireminds.com/news/item/\(id)") { data, error in
             guard let data = data, error == nil else {
                 callback(nil, true)
@@ -147,7 +134,7 @@ class Model {
             callback(nil, true)
         }
     }
-    
+    /*
     private let weatherKey = "321b025d9fdd2c1f9b91d2280f012c27"
     func getWeather(_ callback: @escaping (WeatherInfo) -> ()) {
         Request.shared.get("http://api.openweathermap.org/data/2.5/weather?id=3573345&APPID=\(weatherKey)") { json, error in
@@ -189,5 +176,5 @@ class Model {
             let w = WeatherInfo(image: image, description: main)
             callback(w)
         }
-    }
+    }*/
 }

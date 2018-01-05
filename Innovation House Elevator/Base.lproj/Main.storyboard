@@ -132,24 +132,48 @@ Floor 5</string>
                                             <constraint firstAttribute="width" constant="210" id="VOc-Xo-ZBX"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-7Q-w8f">
-                                        <rect key="frame" x="258" y="37" width="438" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-7Q-w8f">
+                                        <rect key="frame" x="258" y="37" width="438" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q6-xX-K98">
-                                        <rect key="frame" x="258" y="67" width="438" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q6-xX-K98">
+                                        <rect key="frame" x="258" y="37" width="438" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Portion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiL-HS-Fjv">
-                                        <rect key="frame" x="258" y="97" width="438" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiL-HS-Fjv">
+                                        <rect key="frame" x="258" y="49" width="438" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="IFc-Zq-fcD">
+                                        <rect key="frame" x="147" y="6" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="dO1-TA-uEj"/>
+                                            <constraint firstAttribute="height" constant="25" id="nYT-Q3-mNJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet Connection Offline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOh-EA-Z3Q">
+                                        <rect key="frame" x="180" y="8" width="183.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="gf6-Eq-JNo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" red="0.97647058819999999" green="0.35686274509999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JDb-Ni-76b">
+                                        <rect key="frame" x="397.5" y="81.5" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="6V5-t6-k8p"/>
+                                            <constraint firstAttribute="width" constant="37" id="lEI-Hb-0JF"/>
+                                        </constraints>
+                                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -158,12 +182,18 @@ Floor 5</string>
                                     <constraint firstAttribute="trailing" secondItem="E9v-7Q-w8f" secondAttribute="trailing" constant="8" id="93c-hi-r9T"/>
                                     <constraint firstItem="E9v-7Q-w8f" firstAttribute="leading" secondItem="B6E-sD-WDL" secondAttribute="trailing" constant="16" id="9Qc-wI-SwB"/>
                                     <constraint firstItem="B6E-sD-WDL" firstAttribute="top" secondItem="VHQ-oJ-Fq5" secondAttribute="bottom" constant="8" id="BFu-Zz-DUt"/>
+                                    <constraint firstItem="JDb-Ni-76b" firstAttribute="centerX" secondItem="eTe-I0-eWK" secondAttribute="centerX" constant="64" id="IeI-oN-3Nw"/>
                                     <constraint firstItem="VHQ-oJ-Fq5" firstAttribute="leading" secondItem="eTe-I0-eWK" secondAttribute="leading" constant="32" id="JYa-7o-Aoa"/>
                                     <constraint firstItem="NiL-HS-Fjv" firstAttribute="top" secondItem="1Q6-xX-K98" secondAttribute="bottom" constant="12" id="LdY-H9-f0c"/>
                                     <constraint firstItem="E9v-7Q-w8f" firstAttribute="top" secondItem="B6E-sD-WDL" secondAttribute="top" id="NoQ-Aw-ypo"/>
+                                    <constraint firstItem="IFc-Zq-fcD" firstAttribute="leading" secondItem="VHQ-oJ-Fq5" secondAttribute="trailing" constant="8" id="S5i-Ja-AIl"/>
                                     <constraint firstAttribute="bottom" secondItem="B6E-sD-WDL" secondAttribute="bottom" constant="16" id="Tg1-Jv-c7O"/>
                                     <constraint firstItem="1Q6-xX-K98" firstAttribute="trailing" secondItem="E9v-7Q-w8f" secondAttribute="trailing" id="Up8-cm-98h"/>
                                     <constraint firstItem="VHQ-oJ-Fq5" firstAttribute="top" secondItem="eTe-I0-eWK" secondAttribute="top" constant="8" id="Zww-gh-wbQ"/>
+                                    <constraint firstItem="UOh-EA-Z3Q" firstAttribute="centerY" secondItem="IFc-Zq-fcD" secondAttribute="centerY" id="cZj-Jo-v8O"/>
+                                    <constraint firstItem="JDb-Ni-76b" firstAttribute="centerY" secondItem="eTe-I0-eWK" secondAttribute="centerY" id="edE-iS-uy8"/>
+                                    <constraint firstItem="UOh-EA-Z3Q" firstAttribute="leading" secondItem="IFc-Zq-fcD" secondAttribute="trailing" constant="8" id="fJ1-PH-IxJ"/>
+                                    <constraint firstItem="IFc-Zq-fcD" firstAttribute="centerY" secondItem="VHQ-oJ-Fq5" secondAttribute="centerY" id="nLt-DX-a4n"/>
                                     <constraint firstItem="1Q6-xX-K98" firstAttribute="top" secondItem="E9v-7Q-w8f" secondAttribute="bottom" id="nud-1i-y9g"/>
                                     <constraint firstAttribute="height" constant="200" id="pvh-Ad-Jot"/>
                                     <constraint firstItem="NiL-HS-Fjv" firstAttribute="leading" secondItem="1Q6-xX-K98" secondAttribute="leading" id="xcd-Ab-asp"/>
@@ -197,6 +227,9 @@ Floor 5</string>
                         <outlet property="backgroundImage" destination="lau-nn-Eud" id="eEf-qU-8ZD"/>
                         <outlet property="bloombergButton" destination="apW-xv-6jm" id="2Li-SL-hZN"/>
                         <outlet property="buildingLabel" destination="rky-a2-yj8" id="hnb-yU-wbI"/>
+                        <outlet property="loadingStory" destination="JDb-Ni-76b" id="3ZX-f8-Fgh"/>
+                        <outlet property="offlineImage" destination="IFc-Zq-fcD" id="ZHP-1m-H2T"/>
+                        <outlet property="offlineText" destination="UOh-EA-Z3Q" id="ekD-AE-VVu"/>
                         <outlet property="storyDate" destination="1Q6-xX-K98" id="tI7-aS-t0C"/>
                         <outlet property="storyImage" destination="B6E-sD-WDL" id="YV6-bc-eUL"/>
                         <outlet property="storyPortion" destination="NiL-HS-Fjv" id="lub-fj-wLs"/>
@@ -213,5 +246,6 @@ Floor 5</string>
         <image name="Background" width="1125" height="320"/>
         <image name="Bloomberg" width="129" height="30"/>
         <image name="Clock" width="50" height="50"/>
+        <image name="Error" width="50" height="50"/>
     </resources>
 </document>
